@@ -25,6 +25,7 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - aws s3 ls
+      - cat abc.txt  
     finally:
       - echo This always runs even if the install command fails
   post_build:
