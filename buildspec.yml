@@ -25,7 +25,8 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - aws s3 ls
-      - cat abc.txt  
+      - cat abc.txt 
+      - cd .. 
       - aws cloudformation deploy --template-file 03a-VPC.yml --stack-name test-stack-vpc-core --region eu-west-1
     finally:
       - echo This always runs even if the install command fails
