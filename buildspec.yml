@@ -26,9 +26,7 @@ phases:
       - echo Build started on `date`
       - aws s3 ls
       - cat abc.txt 
-      - cd .. 
-      - aws cloudformation deploy --template-file 03a-VPC.yml --stack-name test-stack-vpc-core --parameter-overrides Key1=Value1 Key2=Value2 --tags Key1=Value1 Key2=Value2
-        --region eu-west-1
+      - bash /shell_script/ec2.sh  
     finally:
       - echo This always runs even if the install command fails
   post_build:
